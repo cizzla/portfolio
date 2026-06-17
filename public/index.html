@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fred Waweru | Full Stack Software Developer & ICT Expert</title>
+  <meta name="description" content="Professional portfolio of Fred Waweru, specialized in Node.js, React, PostgreSQL, and enterprise IT infrastructure troubleshooting.">
+  
+  <meta property="og:title" content="Fred Waweru | Full Stack Software Developer">
+  <meta property="og:description" content="Explore advanced dynamic projects like the Biometric Student Council Online Voting Architecture.">
+  <meta property="og:type" content="website">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { gold: '#D4AF37', slate: '#0F172A', cardDark: '#1E293B' }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-brand-slate dark:text-slate-100 transition-colors duration-300 antialiased font-sans">
+
+  <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-brand-slate/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
+        FRED<span class="text-brand-gold">.</span>WAWERU
+      </a>
+      
+      <nav class="hidden md:flex space-x-8 items-center font-medium text-sm">
+        <a href="#about" class="hover:text-blue-600 transition">About</a>
+        <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+        <a href="#services" class="hover:text-blue-600 transition">Services</a>
+        <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+        <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+        
+        <button id="themeToggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Toggle dark mode">
+          <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+          <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-brand-gold"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-brand-slate dark:via-brand-slate dark:to-slate-900">
+    <div class="absolute inset-0 opacity-30 dark:opacity-20 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400 rounded-full filter blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-400 rounded-full filter blur-3xl animate-pulse delay-700"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center z-10 w-full">
+      <div class="space-y-6 text-center md:text-left">
+        <div class="inline-flex items-center space-x-2 bg-blue-50 dark:bg-blue-900/30 px-3 h-8 rounded-full text-sm text-blue-600 dark:text-blue-400 font-medium">
+          <span>Available for Full-Stack & ICT Engineering Contracts</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
+          Hi, I am <br><span class="bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent">Fred Waweru</span>
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg mx-auto md:mx-0">
+          I design, construct, and scale production-ready backend workflows, secure relational database layers, and high-performance user applications.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+          <a href="#projects" class="w-full sm:w-auto h-12 px-6 flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-lg shadow-blue-500/20 transition transform hover:-translate-y-0.5">
+            View My Builds
+          </a>
+          <a href="#" id="downloadCV" class="w-full sm:w-auto h-12 px-6 flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition font-medium space-x-2">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span>Download Resume CV</span>
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-2xl overflow-hidden border-4 border-white dark:border-brand-cardDark shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Fred Waweru Headshot" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">About Me</h2>
+      <div class="h-1 w-12 bg-blue-600 mx-auto rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="space-y-4 text-slate-600 dark:text-slate-400">
+        <p>
+          As an experienced technologist navigating digital systems deployment ecosystems, my core design values prioritize speed optimization, ironclad data storage pipelines, and highly modern application rendering frameworks.
+        </p>
+        <p>
+          I execute structural infrastructure strategies covering both front-end interactions and deeply logical backend routing mechanisms linked to high-performance cloud databases like Neon PostgreSQL.
+        </p>
+      </div>
+      <div class="bg-white dark:bg-brand-cardDark p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+        <h3 class="text-xl font-bold">Academic Core</h3>
+        <div class="border-l-2 border-blue-600 pl-4 space-y-1">
+          <p class="font-bold">Information Technology & Software Systems Management</p>
+          <p class="text-sm text-slate-500">Meru University of Science and Technology</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-24 bg-slate-100 dark:bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Skills Matrix</h2>
+        <div class="h-1 w-12 bg-blue-600 mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-2">
+          <div class="flex justify-between font-medium text-sm"><span>Node.js / Express.js Backend</span><span>90%</span></div>
+          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div class="bg-blue-600 h-full rounded-full" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-medium text-sm"><span>PostgreSQL / Neon Cloud Storage</span><span>88%</span></div>
+          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div class="bg-indigo-500 h-full rounded-full" style="width: 88%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-medium text-sm"><span>HTML5 / CSS3 / JavaScript</span><span>85%</span></div>
+          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div class="bg-purple-500 h-full rounded-full" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-medium text-sm"><span>Git / GitHub & DevOps</span><span>92%</span></div>
+          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+            <div class="bg-emerald-500 h-full rounded-full" style="width: 92%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Featured Projects</h2>
+      <p class="text-slate-500">Live data processed directly from your Neon backend API</p>
+      <div class="h-1 w-12 bg-blue-600 mx-auto rounded-full mt-4"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectGrid">
+      <div class="animate-pulse bg-slate-200 dark:bg-brand-cardDark h-64 rounded-xl"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 bg-slate-100 dark:bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="space-y-6">
+        <h2 class="text-3xl font-bold tracking-tight">Let's Connect</h2>
+        <p class="text-slate-600 dark:text-slate-400">
+          Have an automation target, system configuration, database scaling project, or platform requirement? Leave an inquiry.
+        </p>
+        <div class="space-y-4 font-medium text-sm">
+          <div class="flex items-center space-x-3"><i data-lucide="mail" class="text-blue-600 w-5 h-5"></i><span>developer@fredwaweru.com</span></div>
+          <div class="flex items-center space-x-3"><i data-lucide="map-pin" class="text-blue-600 w-5 h-5"></i><span>Meru, Kenya</span></div>
+        </div>
+      </div>
+
+      <form id="contactForm" class="bg-white dark:bg-brand-cardDark p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-500">Name</label>
+          <input type="text" id="formName" required class="w-full h-11 px-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-blue-600 transition">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-500">Email Address</label>
+          <input type="email" id="formEmail" required class="w-full h-11 px-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-blue-600 transition">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-500">Subject</label>
+          <input type="text" id="formSubject" required class="w-full h-11 px-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-blue-600 transition">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider mb-2 text-slate-500">Message</label>
+          <textarea id="formMessage" rows="4" required class="w-full p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-blue-600 transition"></textarea>
+        </div>
+        <button type="submit" class="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition shadow-md">
+          Send Message
+        </button>
+        <div id="formStatus" class="text-sm font-medium pt-2 text-center hidden"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-400">
+    <p>&copy; 2026 Fred Waweru. Built with Node.js & Neon PostgreSQL.</p>
+  </footer>
+
+  <script>
+    const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      ? 'http://localhost:5000/api'
+      : 'https://fred-waweru-portfolio-backend.onrender.com/api'; // Replace with your Render URL later
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      initializeTheme();
+      fetchProjects();
+      setupContactForm();
+    });
+
+    function initializeTheme() {
+      const toggle = document.getElementById('themeToggle');
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+      toggle.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
+
+    async function fetchProjects() {
+      const grid = document.getElementById('projectGrid');
+      try {
+        const res = await fetch(`${API_BASE_URL}/projects`);
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        grid.innerHTML = '';
+        data.forEach(p => {
+          const badges = p.technologies.map(t => `<span class="bg-slate-100 dark:bg-slate-800 text-xs px-2.5 py-1 rounded-md font-mono">${t}</span>`).join('');
+          grid.innerHTML += `
+            <div class="bg-white dark:bg-brand-cardDark rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition">
+              <img src="${p.image_url}" class="w-full h-48 object-cover">
+              <div class="p-6 space-y-4">
+                <h3 class="text-xl font-bold">${p.title}</h3>
+                <p class="text-sm text-slate-500">${p.description}</p>
+                <div class="flex flex-wrap gap-1.5">${badges}</div>
+                <div class="flex space-x-4 pt-2 text-sm font-semibold">
+                  <a href="${p.live_url}" target="_blank" class="text-blue-600 hover:underline">Live Demo</a>
+                  <a href="${p.github_url}" target="_blank" class="text-slate-400 hover:underline">GitHub</a>
+                </div>
+              </div>
+            </div>`;
+        });
+        lucide.createIcons();
+      } catch {
+        grid.innerHTML = `<p class="col-span-full text-center text-sm text-red-500">Could not dynamic-load portfolio data.</p>`;
+      }
+    }
+
+    function setupContactForm() {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.classList.remove('hidden', 'text-red-500', 'text-green-500');
+        status.innerText = 'Sending payload configuration...';
+        status.classList.add('block');
+        
+        try {
+          const res = await fetch(`${API_BASE_URL}/contact`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: document.getElementById('formName').value,
+              email: document.getElementById('formEmail').value,
+              subject: document.getElementById('formSubject').value,
+              message: document.getElementById('formMessage').value
+            })
+          });
+          const out = await res.json();
+          if (!res.ok) throw new Error(out.error);
+          status.className = 'text-sm font-medium pt-2 text-center text-green-500';
+          status.innerText = 'Message stored successfully in Neon DB!';
+          form.reset();
+        } catch (err) {
+          status.className = 'text-sm font-medium pt-2 text-center text-red-500';
+          status.innerText = err.message || 'Error executing pipeline.';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
