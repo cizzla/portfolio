@@ -3,7 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { Pool } = require('pg');
 const rateLimit = require('express-rate-limit');
-require('dotenv').config();
+const path = require('path'); // Added for handling folder paths securely
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -15,9 +15,15 @@ const pool = new Pool({
 });
 
 // Middleware
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false, // Disables strict CSP so CDNs for icons/Tailwind load smoothly
+}));
 app.use(express.json());
-app.use(cors({ origin: '*' })); // Allows connection access during layout builds
+app.use(cors({ origin: '*' }));
+
+// Serve static frontend files from the public folder
+// This tells Express to serve everything inside the public folder automatically
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Rate Limiter to stop form spamming
 const formLimiter = rateLimit({
@@ -37,7 +43,7 @@ app.get('/api/projects', async (req, res) => {
 });
 
 app.post('/api/contact', formLimiter, async (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const { name, email, subject, message } = require.body || req.body;
   if (!name || !email || !subject || !message) {
     return res.status(400).json({ error: 'All parameters mandatory.' });
   }
@@ -50,6 +56,11 @@ app.post('/api/contact', formLimiter, async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Database write failure.' });
   }
+});
+
+// Wildcard Route: If a user hits any other link, send them back to the main index.html page
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server executing securely on port ${PORT}`));
