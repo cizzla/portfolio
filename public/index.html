@@ -6,10 +6,6 @@
   <title>Fred Waweru | Full Stack Software Developer & ICT Expert</title>
   <meta name="description" content="Professional portfolio of Fred Waweru, specialized in Node.js, React, PostgreSQL, and enterprise IT infrastructure troubleshooting.">
   
-  <meta property="og:title" content="Fred Waweru | Full Stack Software Developer">
-  <meta property="og:description" content="Explore advanced dynamic projects like the Biometric Student Council Online Voting Architecture.">
-  <meta property="og:type" content="website">
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -23,7 +19,6 @@
       }
     }
   </script>
-  
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-brand-slate dark:text-slate-100 transition-colors duration-300 antialiased font-sans">
@@ -41,6 +36,10 @@
         <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
         <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
         
+        <span id="userGreeting" class="text-slate-500 font-normal hidden"></span>
+        <button id="authNavBtn" onclick="openAuthModal('login')" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-blue-700 transition">Login / Sign Up</button>
+        <button id="logoutBtn" onclick="handleLogout()" class="border border-red-500 text-red-500 px-4 py-2 rounded-lg text-xs font-semibold hover:bg-red-500 hover:text-white transition hidden">Logout</button>
+
         <button id="themeToggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="Toggle dark mode">
           <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
           <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-brand-gold"></i>
@@ -70,15 +69,16 @@
           <a href="#projects" class="w-full sm:w-auto h-12 px-6 flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-lg shadow-blue-500/20 transition transform hover:-translate-y-0.5">
             View My Builds
           </a>
-          <a href="#" id="downloadCV" class="w-full sm:w-auto h-12 px-6 flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition font-medium space-x-2">
+          <a href="#" class="w-full sm:w-auto h-12 px-6 flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition font-medium space-x-2">
             <i data-lucide="download" class="w-4 h-4"></i>
             <span>Download Resume CV</span>
           </a>
         </div>
       </div>
+      
       <div class="flex justify-center">
         <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-2xl overflow-hidden border-4 border-white dark:border-brand-cardDark shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Fred Waweru Headshot" class="w-full h-full object-cover">
+          <img id="profilePhoto" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Fred Waweru Headshot" class="w-full h-full object-cover">
         </div>
       </div>
     </div>
@@ -94,9 +94,6 @@
         <p>
           As an experienced technologist navigating digital systems deployment ecosystems, my core design values prioritize speed optimization, ironclad data storage pipelines, and highly modern application rendering frameworks.
         </p>
-        <p>
-          I execute structural infrastructure strategies covering both front-end interactions and deeply logical backend routing mechanisms linked to high-performance cloud databases like Neon PostgreSQL.
-        </p>
       </div>
       <div class="bg-white dark:bg-brand-cardDark p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
         <h3 class="text-xl font-bold">Academic Core</h3>
@@ -108,48 +105,11 @@
     </div>
   </section>
 
-  <section id="skills" class="py-24 bg-slate-100 dark:bg-slate-900/50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Skills Matrix</h2>
-        <div class="h-1 w-12 bg-blue-600 mx-auto rounded-full"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="space-y-2">
-          <div class="flex justify-between font-medium text-sm"><span>Node.js / Express.js Backend</span><span>90%</span></div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
-            <div class="bg-blue-600 h-full rounded-full" style="width: 90%"></div>
-          </div>
-        </div>
-        <div class="space-y-2">
-          <div class="flex justify-between font-medium text-sm"><span>PostgreSQL / Neon Cloud Storage</span><span>88%</span></div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
-            <div class="bg-indigo-500 h-full rounded-full" style="width: 88%"></div>
-          </div>
-        </div>
-        <div class="space-y-2">
-          <div class="flex justify-between font-medium text-sm"><span>HTML5 / CSS3 / JavaScript</span><span>85%</span></div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
-            <div class="bg-purple-500 h-full rounded-full" style="width: 85%"></div>
-          </div>
-        </div>
-        <div class="space-y-2">
-          <div class="flex justify-between font-medium text-sm"><span>Git / GitHub & DevOps</span><span>92%</span></div>
-          <div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
-            <div class="bg-emerald-500 h-full rounded-full" style="width: 92%"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="projects" class="py-24 max-w-7xl mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Featured Projects</h2>
-      <p class="text-slate-500">Live data processed directly from your Neon backend API</p>
       <div class="h-1 w-12 bg-blue-600 mx-auto rounded-full mt-4"></div>
     </div>
-    
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectGrid">
       <div class="animate-pulse bg-slate-200 dark:bg-brand-cardDark h-64 rounded-xl"></div>
     </div>
@@ -159,9 +119,6 @@
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12">
       <div class="space-y-6">
         <h2 class="text-3xl font-bold tracking-tight">Let's Connect</h2>
-        <p class="text-slate-600 dark:text-slate-400">
-          Have an automation target, system configuration, database scaling project, or platform requirement? Leave an inquiry.
-        </p>
         <div class="space-y-4 font-medium text-sm">
           <div class="flex items-center space-x-3"><i data-lucide="mail" class="text-blue-600 w-5 h-5"></i><span>developer@fredwaweru.com</span></div>
           <div class="flex items-center space-x-3"><i data-lucide="map-pin" class="text-blue-600 w-5 h-5"></i><span>Meru, Kenya</span></div>
@@ -193,6 +150,17 @@
     </div>
   </section>
 
+  <div id="authModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+    <div class="bg-white dark:bg-brand-cardDark w-full max-w-md p-8 rounded-2xl shadow-2xl relative border border-slate-200 dark:border-slate-800 mx-4">
+      <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      
+      <div id="modalContainer">
+        </div>
+    </div>
+  </div>
+
   <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-400">
     <p>&copy; 2026 Fred Waweru. Built with Node.js & Neon PostgreSQL.</p>
   </footer>
@@ -200,13 +168,14 @@
   <script>
     const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
       ? 'http://localhost:5000/api'
-      : 'https://fred-waweru-portfolio-backend.onrender.com/api'; // Replace with your Render URL later
+      : `${window.location.origin}/api`;
 
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
       initializeTheme();
       fetchProjects();
       setupContactForm();
+      checkAuthStatus();
     });
 
     function initializeTheme() {
@@ -223,6 +192,128 @@
           localStorage.setItem('theme', 'dark');
         }
       });
+    }
+
+    function checkAuthStatus() {
+      const user = JSON.parse(localStorage.getItem('userToken'));
+      const greeting = document.getElementById('userGreeting');
+      const authBtn = document.getElementById('authNavBtn');
+      const logoutBtn = document.getElementById('logoutBtn');
+
+      if (user && user.name) {
+        greeting.innerText = `Welcome, ${user.name}`;
+        greeting.classList.remove('hidden');
+        logoutBtn.classList.remove('hidden');
+        authBtn.classList.add('hidden');
+      } else {
+        greeting.classList.add('hidden');
+        logoutBtn.classList.add('hidden');
+        authBtn.classList.remove('hidden');
+      }
+    }
+
+    function handleLogout() {
+      localStorage.removeItem('userToken');
+      checkAuthStatus();
+    }
+
+    function openAuthModal(mode) {
+      const modal = document.getElementById('authModal');
+      const container = document.getElementById('modalContainer');
+      modal.classList.remove('hidden');
+
+      if (mode === 'login') {
+        container.innerHTML = `
+          <h3 class="text-2xl font-bold mb-6 text-center">Account Sign In</h3>
+          <form id="authSubmitForm" onsubmit="executeAuthPipeline(event, 'login')" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Email Address</label>
+              <input type="email" id="authEmail" required class="w-full h-11 px-4 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 rounded-lg focus:outline-none focus:border-blue-600 transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Password</label>
+              <input type="password" id="authPassword" required class="w-full h-11 px-4 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 rounded-lg focus:outline-none focus:border-blue-600 transition">
+            </div>
+            <div class="text-right"><button type="button" onclick="openAuthModal('forgot')" class="text-xs text-blue-500 hover:underline">Forgot Password?</button></div>
+            <button type="submit" class="w-full h-11 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Sign In</button>
+            <p class="text-xs text-center text-slate-400 pt-2">Don't have an account? <button type="button" onclick="openAuthModal('signup')" class="text-blue-500 font-semibold hover:underline">Sign Up</button></p>
+            <div id="authStatusMsg" class="text-xs text-center font-medium hidden"></div>
+          </form>`;
+      } else if (mode === 'signup') {
+        container.innerHTML = `
+          <h3 class="text-2xl font-bold mb-6 text-center">Create Account</h3>
+          <form id="authSubmitForm" onsubmit="executeAuthPipeline(event, 'signup')" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Full Name</label>
+              <input type="text" id="authName" required class="w-full h-11 px-4 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 rounded-lg focus:outline-none focus:border-blue-600 transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Email Address</label>
+              <input type="email" id="authEmail" required class="w-full h-11 px-4 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 rounded-lg focus:outline-none focus:border-blue-600 transition">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Password</label>
+              <input type="password" id="authPassword" required class="w-full h-11 px-4 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 rounded-lg focus:outline-none focus:border-blue-600 transition">
+            </div>
+            <button type="submit" class="w-full h-11 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Register Account</button>
+            <p class="text-xs text-center text-slate-400 pt-2">Already registered? <button type="button" onclick="openAuthModal('login')" class="text-blue-500 font-semibold hover:underline">Log In</button></p>
+            <div id="authStatusMsg" class="text-xs text-center font-medium hidden"></div>
+          </form>`;
+      } else if (mode === 'forgot') {
+        container.innerHTML = `
+          <h3 class="text-xl font-bold mb-2 text-center">Reset Password</h3>
+          <p class="text-xs text-slate-400 text-center mb-6">Enter your email link to query security parameter restructuring.</p>
+          <form id="authSubmitForm" onsubmit="executeAuthPipeline(event, 'forgot')" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Email Address</label>
+              <input type="email" id="authEmail" required class="w-full h-11 px-4 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 rounded-lg focus:outline-none focus:border-blue-600 transition">
+            </div>
+            <button type="submit" class="w-full h-11 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">Send Reset Instructions</button>
+            <div class="text-center"><button type="button" onclick="openAuthModal('login')" class="text-xs text-blue-500 hover:underline">Return to Login</button></div>
+            <div id="authStatusMsg" class="text-xs text-center font-medium hidden"></div>
+          </form>`;
+      }
+      lucide.createIcons();
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+    }
+
+    async function executeAuthPipeline(event, path) {
+      event.preventDefault();
+      const msg = document.getElementById('authStatusMsg');
+      msg.classList.remove('hidden', 'text-red-500', 'text-green-500');
+      msg.className = "text-xs text-center font-medium text-blue-500 block";
+      msg.innerText = "Processing secure network hashing...";
+
+      const payload = {
+        email: document.getElementById('authEmail').value,
+      };
+      
+      if(path === 'signup') payload.name = document.getElementById('authName').value;
+      if(path !== 'forgot') payload.password = document.getElementById('authPassword').value;
+
+      try {
+        const res = await fetch(`${API_BASE_URL}/auth/${path}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const out = await res.json();
+        if(!res.ok) throw new Error(out.error);
+
+        msg.className = "text-xs text-center font-medium text-green-500 block";
+        msg.innerText = out.message;
+
+        if (path === 'login' || path === 'signup') {
+          localStorage.setItem('userToken', JSON.stringify({ name: out.name, email: out.email }));
+          setTimeout(() => { closeAuthModal(); checkAuthStatus(); }, 1200);
+        }
+      } catch (err) {
+        msg.className = "text-xs text-center font-medium text-red-500 block";
+        msg.innerText = err.message || "Pipeline error processing verification.";
+      }
     }
 
     async function fetchProjects() {
